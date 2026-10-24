@@ -1,5 +1,17 @@
 [
   {
+    "id": "nmvmka9vu32pu",
+    "tipo": "falha",
+    "titulo": "O ciclo de Lista de Compras parou em pr",
+    "detalhe": "O PR não foi aberto. O motivo está na conversa do DevOps.",
+    "em": 1792856190090,
+    "lida": false,
+    "comando": "sdlc.abrirSessao",
+    "args": [
+      "mvmk8nrwhwaf"
+    ]
+  },
+  {
     "id": "nmvmk24fzwt2y",
     "tipo": "pendente",
     "titulo": "Intent espera você · Lista de Compras",
