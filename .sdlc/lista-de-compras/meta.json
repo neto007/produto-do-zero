@@ -1,0 +1,14 @@
+{
+  "produto": "Lista de Compras",
+  "iteracao": 1,
+  "ideia": "Uma lista de compras para a casa: adicionar itens com quantidade, marcar como comprado, ver só o que falta comprar e limpar os itens já comprados. API REST em Node com TypeScript, com testes automatizados.",
+  "criadoEm": 1792855773654,
+  "autonomia": "autonomo",
+  "versao": "1.0.0",
+  "marcos": {
+    "testesVerdes": 1792856074666,
+    "specAprovada": 1792855894806,
+    "intentAceito": 1792855880450,
+    "intentEscrito": 1792855807334
+  }
+}

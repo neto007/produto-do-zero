@@ -1,0 +1,26 @@
+[
+  {
+    "id": "nmvmk24fzwt2y",
+    "tipo": "pendente",
+    "titulo": "Intent espera você · Lista de Compras",
+    "detalhe": "Responda na conversa para o ciclo continuar.",
+    "em": 1792855809791,
+    "lida": false,
+    "comando": "sdlc.abrirSessao",
+    "args": [
+      "mvmk1clb2j52"
+    ]
+  },
+  {
+    "id": "nmvmk1ck7jipn",
+    "tipo": "info",
+    "titulo": "Produto Lista de Compras criado",
+    "detalhe": "O Intent está escrevendo o intent.md",
+    "em": 1792855773655,
+    "lida": false,
+    "comando": "sdlc.abrirProduto",
+    "args": [
+      "lista-de-compras"
+    ]
+  }
+]

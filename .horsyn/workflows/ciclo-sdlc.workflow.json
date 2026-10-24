@@ -1,0 +1,130 @@
+{
+  "name": "Ciclo SDLC",
+  "description": "Planejar → Desenhar → Construir → Testar → Implantar, com portões entre as etapas.",
+  "inputs": {
+    "pedido": "prompt",
+    "ciclo": "string"
+  },
+  "steps": [
+    {
+      "type": "step",
+      "id": "planejar",
+      "agent": "sdlc-intent",
+      "prompt": "Pedido: {{pedido}}\n\nEscreva o intent deste ciclo em .sdlc/{{ciclo}}/intent.md. Depois peça o aceite da pessoa com a ferramenta user_input, com as opções \"Aceito\" e \"Quero ajustes\"; se ela pedir ajustes, ajuste o intent e pergunte de novo. Quando ela aceitar, termine a mensagem com a linha INTENT ACEITO.",
+      "artifacts": {
+        "intent": ".sdlc/{{ciclo}}/intent.md"
+      },
+      "completion": {
+        "containsText": "INTENT ACEITO"
+      }
+    },
+    {
+      "type": "repeat",
+      "id": "desenhar",
+      "maxIterations": 3,
+      "onMaxIterations": "pause",
+      "stopCondition": {
+        "fileCheck": {
+          "path": ".sdlc/{{ciclo}}/spec-review.json",
+          "jsonPath": "verdict",
+          "value": "APPROVED"
+        }
+      },
+      "steps": [
+        {
+          "type": "step",
+          "id": "spec",
+          "agent": "sdlc-arquiteto",
+          "prompt": "Intent: {{artifacts.intent}}\n\nEscreva ou revise a spec em .sdlc/{{ciclo}}/spec.md. Se existir .sdlc/{{ciclo}}/spec-review.json, resolva cada issue listada.",
+          "artifacts": {
+            "spec": ".sdlc/{{ciclo}}/spec.md"
+          }
+        },
+        {
+          "type": "step",
+          "id": "revisao-spec",
+          "agent": "sdlc-revisor",
+          "prompt": "Revise {{artifacts.spec}} contra {{artifacts.intent}} e grave o veredito em .sdlc/{{ciclo}}/spec-review.json."
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "construir",
+      "agent": "sdlc-construtor",
+      "prompt": "Spec aprovada: {{artifacts.spec}}\n\nEscreva .sdlc/{{ciclo}}/plan.md e implemente as tarefas, uma por vez, com testes verdes antes de avançar.",
+      "artifacts": {
+        "plan": ".sdlc/{{ciclo}}/plan.md"
+      }
+    },
+    {
+      "type": "repeat",
+      "id": "testar",
+      "maxIterations": 5,
+      "onMaxIterations": "pause",
+      "stopCondition": {
+        "fileCheck": {
+          "path": ".sdlc/{{ciclo}}/test-report.json",
+          "jsonPath": "green",
+          "value": true
+        }
+      },
+      "steps": [
+        {
+          "type": "parallel",
+          "id": "verificacao",
+          "joinPolicy": "allSettled",
+          "branches": [
+            {
+              "type": "step",
+              "id": "qa",
+              "agent": "sdlc-qa",
+              "prompt": "Intent: {{artifacts.intent}}\nPlano: {{artifacts.plan}}\n\nRode a suíte, cubra cada critério de aceite e grave o relatório em .sdlc/{{ciclo}}/test-report.json."
+            },
+            {
+              "type": "step",
+              "id": "appsec",
+              "agent": "sdlc-appsec",
+              "prompt": "Revise a segurança do diff deste ciclo e grave os achados em .sdlc/{{ciclo}}/security.md."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "abrir-pr",
+      "agent": "sdlc-devops",
+      "prompt": "Abra o PR do ciclo {{ciclo}} como rascunho resumindo intent, spec, plano, .sdlc/{{ciclo}}/test-report.json e .sdlc/{{ciclo}}/security.md. Se o repositório não tiver CI em .github/workflows, crie antes um workflow que instale as dependências e rode os testes em cada PR, e inclua no commit. O título do PR começa com a versão, do campo versao de .sdlc/{{ciclo}}/meta.json (ex.: v1.0.1: ...). Grave a URL em .sdlc/{{ciclo}}/pr.json (campo url). Se não conseguir abrir o PR, não grave pr.json e diga por quê; nunca invente a URL.",
+      "artifacts": {
+        "pr": ".sdlc/{{ciclo}}/pr.json"
+      }
+    },
+    {
+      "type": "repeat",
+      "id": "implantar",
+      "maxIterations": 200,
+      "onMaxIterations": "pause",
+      "stopWhen": "pr.terminal",
+      "steps": [
+        {
+          "type": "watch",
+          "id": "pr",
+          "handler": "github-pr",
+          "config": {
+            "prRef": ".sdlc/{{ciclo}}/pr.json",
+            "ignoreAuthors": [
+              "github-actions"
+            ]
+          }
+        },
+        {
+          "type": "step",
+          "id": "go-no-go",
+          "agent": "sdlc-po",
+          "prompt": "Ciclo {{ciclo}}. Responda ao PR e registre GO/NO-GO em .sdlc/{{ciclo}}/release.md. Os checks do payload são o CI (o test-report.json local não é CI). Corrija o que for pedido com commit e push no branch do PR. Não altere .sdlc/{{ciclo}}/pr.json. Registre também a linha Versão: X.Y.Z no release.md, com o campo versao de .sdlc/{{ciclo}}/meta.json.\n\nPayload do PR:\n{{pr.output}}"
+        }
+      ]
+    }
+  ]
+}

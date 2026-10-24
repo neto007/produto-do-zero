@@ -1,0 +1,866 @@
+{
+  "id": "qmvmk1ckar78j",
+  "titulo": "Ciclo · Lista de Compras · v1.0.0",
+  "objetivo": "Uma lista de compras para a casa: adicionar itens com quantidade, marcar como comprado, ver só o que falta comprar e limpar os itens já comprados. API REST em Node com TypeScript, com testes automatizados.",
+  "produto": "lista-de-compras",
+  "ciclo": "lista-de-compras",
+  "modo": "agente",
+  "estado": "rodando",
+  "criadoEm": 1792855773658,
+  "atualizadoEm": 1792856114933,
+  "tarefas": [
+    {
+      "id": "tmvmk1ckbt6dh",
+      "titulo": "Escrever o intent e obter o seu aceite",
+      "descricao": "O agente Intent transforma o pedido no intent.md: o problema, para quem é, o escopo e os critérios de aceite. O ciclo espera o seu aceite no chat antes da spec.",
+      "coluna": "concluido",
+      "dono": "sdlc-intent",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792855880681,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792855773982,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792855807563,
+          "texto": "Critério cumprido: intent.md com o problema, o escopo e os critérios de aceite"
+        },
+        {
+          "em": 1792855810020,
+          "texto": "Movida para Revisão pelo ciclo"
+        },
+        {
+          "em": 1792855837830,
+          "texto": "Movida para A fazer pelo ciclo"
+        },
+        {
+          "em": 1792855880681,
+          "texto": "Movida para Concluído pelo ciclo"
+        },
+        {
+          "em": 1792855880681,
+          "texto": "Critério cumprido: Intent aceito por você"
+        }
+      ],
+      "passo": "planejar",
+      "tipo": "tarefa",
+      "prioridade": "alta",
+      "rotulos": [
+        "Planejar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "intent.md com o problema, o escopo e os critérios de aceite",
+          "feito": true
+        },
+        {
+          "texto": "Intent aceito por você",
+          "feito": true
+        }
+      ],
+      "links": [
+        {
+          "titulo": "intent.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/intent.md"
+        },
+        {
+          "titulo": "pedido.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/pedido.md"
+        }
+      ],
+      "chave": "LC-1",
+      "sessao": "mvmk1clb2j52"
+    },
+    {
+      "id": "tmvmk1ckbj2ji",
+      "titulo": "Escrever a spec",
+      "descricao": "O Arquiteto escreve o spec.md a partir do intent aceito: requisitos EARS ligados aos critérios de aceite, o design, as interfaces e as decisões.",
+      "coluna": "concluido",
+      "dono": "sdlc-arquiteto",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792855895035,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792855837830,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792855880681,
+          "texto": "Critério cumprido: spec.md com os requisitos ligados ao intent"
+        },
+        {
+          "em": 1792855885051,
+          "texto": "Movida para A fazer pelo ciclo"
+        },
+        {
+          "em": 1792855895035,
+          "texto": "Movida para Concluído pelo ciclo"
+        },
+        {
+          "em": 1792855895035,
+          "texto": "Critério cumprido: Aprovada pelo revisor"
+        }
+      ],
+      "passo": "spec",
+      "tipo": "tarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Desenhar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "spec.md com os requisitos ligados ao intent",
+          "feito": true
+        },
+        {
+          "texto": "Aprovada pelo revisor",
+          "feito": true
+        }
+      ],
+      "chave": "LC-2",
+      "sessao": "mvmk2pykhl9f",
+      "links": [
+        {
+          "titulo": "spec.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/spec.md"
+        }
+      ]
+    },
+    {
+      "id": "tmvmk1ckbwoe7",
+      "titulo": "Revisar a spec contra o intent",
+      "descricao": "O Revisor confere a spec contra o intent e escreve o spec-review.json. Quando ele pede mudanças, o Arquiteto revisa a spec e a revisão roda de novo.",
+      "coluna": "concluido",
+      "dono": "sdlc-revisor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792855895035,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792855885051,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792855895035,
+          "texto": "Movida para Concluído pelo ciclo"
+        },
+        {
+          "em": 1792855895035,
+          "texto": "Critério cumprido: spec-review.json com o veredito"
+        },
+        {
+          "em": 1792855895035,
+          "texto": "Critério cumprido: Veredito: aprovada"
+        }
+      ],
+      "passo": "revisao-spec",
+      "tipo": "tarefa",
+      "prioridade": "alta",
+      "rotulos": [
+        "Desenhar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "spec-review.json com o veredito",
+          "feito": true
+        },
+        {
+          "texto": "Veredito: aprovada",
+          "feito": true
+        }
+      ],
+      "chave": "LC-3",
+      "sessao": "mvmk3qeah85r",
+      "links": [
+        {
+          "titulo": "spec-review.json",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/spec-review.json"
+        }
+      ]
+    },
+    {
+      "id": "tmvmk1ckbc29u",
+      "titulo": "Planejar as tarefas e construí-las com testes verdes",
+      "descricao": "O Construtor divide a spec nas tarefas do plan.md e constrói uma por vez: primeiro o teste, depois o código, e a suíte inteira verde antes da próxima tarefa.",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792856023676,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792855899212,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792855910616,
+          "texto": "Critério cumprido: plan.md com as tarefas"
+        },
+        {
+          "em": 1792856023676,
+          "texto": "Movida para A fazer pelo ciclo"
+        }
+      ],
+      "passo": "construir",
+      "tipo": "historia",
+      "prioridade": "alta",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "plan.md com as tarefas",
+          "feito": true
+        },
+        {
+          "texto": "0/10 tarefas feitas com testes verdes",
+          "feito": false
+        }
+      ],
+      "chave": "LC-4",
+      "sessao": "mvmk41bn36xe",
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ]
+    },
+    {
+      "id": "tmvmk4a8obbon",
+      "titulo": "1.1 Criar estrutura de pastas e arquivos base.",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792856023676,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792855910616,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792856023676,
+          "texto": "Movida para A fazer pelo ciclo"
+        }
+      ],
+      "passo": "plano:1.1 Criar estrutura de pastas e arquivos base.",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-10"
+    },
+    {
+      "id": "tmvmk4a8o4wvy",
+      "titulo": "1.2 Configurar servidor Express básico e rotas.",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:1.2 Configurar servidor Express básico e rotas.",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-11"
+    },
+    {
+      "id": "tmvmk4a8o68ed",
+      "titulo": "2.1 Definir a estrutura do objeto `Item`.",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:2.1 Definir a estrutura do objeto `Item`.",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-12"
+    },
+    {
+      "id": "tmvmk4a8oghij",
+      "titulo": "2.2 Implementar armazenamento em memória (lista de itens).",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:2.2 Implementar armazenamento em memória (lista de itens).",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-13"
+    },
+    {
+      "id": "tmvmk4a8o1fga",
+      "titulo": "3.1 Implementar `POST /items` para adicionar novos itens com validação (AC1, AC5).",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:3.1 Implementar `POST /items` para adicionar novos itens com validação (AC1, AC5).",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-14"
+    },
+    {
+      "id": "tmvmk4a8on2ke",
+      "titulo": "3.2 Implementar `PATCH /items/:id/status` para marcar como comprado (AC2).",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:3.2 Implementar `PATCH /items/:id/status` para marcar como comprado (AC2).",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-15"
+    },
+    {
+      "id": "tmvmk4a8ozsbu",
+      "titulo": "3.3 Implementar `GET /items/pending` para listar pendentes (AC3).",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:3.3 Implementar `GET /items/pending` para listar pendentes (AC3).",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-16"
+    },
+    {
+      "id": "tmvmk4a8oumhj",
+      "titulo": "3.4 Implementar `DELETE /items/bought` para limpar comprados (AC4).",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:3.4 Implementar `DELETE /items/bought` para limpar comprados (AC4).",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-17"
+    },
+    {
+      "id": "tmvmk4a8ofrvi",
+      "titulo": "4.1 Validar todos os endpoints com testes de integração.",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:4.1 Validar todos os endpoints com testes de integração.",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-18"
+    },
+    {
+      "id": "tmvmk4a8o70x5",
+      "titulo": "4.2 Revisar validações e mensagens de erro.",
+      "descricao": "",
+      "coluna": "afazer",
+      "dono": "sdlc-construtor",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855910616,
+      "atualizadaEm": 1792855910616,
+      "historico": [
+        {
+          "em": 1792855910616,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "plano:4.2 Revisar validações e mensagens de erro.",
+      "tipo": "subtarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Construir",
+        "v1.0.0"
+      ],
+      "links": [
+        {
+          "titulo": "plan.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/plan.md"
+        }
+      ],
+      "sessao": "mvmk41bn36xe",
+      "pai": "tmvmk1ckbc29u",
+      "chave": "LC-19"
+    },
+    {
+      "id": "tmvmk1ckbfygi",
+      "titulo": "Rodar a suíte e cobrir cada critério de aceite",
+      "descricao": "O QA roda a suíte inteira, confere se cada critério de aceite do intent tem teste e escreve o test-report.json.",
+      "coluna": "concluido",
+      "dono": "sdlc-qa",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792856074896,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792856023676,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792856074896,
+          "texto": "Movida para Concluído pelo ciclo"
+        },
+        {
+          "em": 1792856074896,
+          "texto": "Critério cumprido: test-report.json da suíte inteira"
+        },
+        {
+          "em": 1792856074896,
+          "texto": "Critério cumprido: Suíte verde (6/6 testes)"
+        }
+      ],
+      "passo": "qa",
+      "tipo": "tarefa",
+      "prioridade": "alta",
+      "rotulos": [
+        "Testar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "test-report.json da suíte inteira",
+          "feito": true
+        },
+        {
+          "texto": "Suíte verde (6/6 testes)",
+          "feito": true
+        }
+      ],
+      "chave": "LC-5",
+      "sessao": "mvmk6pcvs5tm",
+      "links": [
+        {
+          "titulo": "test-report.json",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/test-report.json"
+        }
+      ]
+    },
+    {
+      "id": "tmvmk1ckbgk6n",
+      "titulo": "Revisar a segurança da mudança",
+      "descricao": "O AppSec revisa a mudança em busca de vulnerabilidades, segredos expostos e dependências arriscadas, e escreve o que achou no security.md.",
+      "coluna": "concluido",
+      "dono": "sdlc-appsec",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792856111793,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792856023676,
+          "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792856111793,
+          "texto": "Movida para Concluído pelo ciclo"
+        },
+        {
+          "em": 1792856111793,
+          "texto": "Critério cumprido: security.md com os achados"
+        }
+      ],
+      "passo": "appsec",
+      "tipo": "tarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Testar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "security.md com os achados",
+          "feito": true
+        }
+      ],
+      "chave": "LC-6",
+      "sessao": "mvmk6pcv13he",
+      "links": [
+        {
+          "titulo": "security.md",
+          "tipo": "arquivo",
+          "alvo": ".sdlc/lista-de-compras/security.md"
+        }
+      ]
+    },
+    {
+      "id": "tmvmk1ckbwxij",
+      "titulo": "Abrir o pull request",
+      "descricao": "O DevOps faz o commit da mudança no branch do ciclo, o push e abre o pull request com a versão no título.",
+      "coluna": "fazendo",
+      "dono": "sdlc-devops",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792856114933,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        },
+        {
+          "em": 1792856114933,
+          "texto": "Movida para Fazendo pelo ciclo"
+        }
+      ],
+      "passo": "abrir-pr",
+      "tipo": "tarefa",
+      "prioridade": "media",
+      "rotulos": [
+        "Implantar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "Pull request aberto",
+          "feito": false
+        }
+      ],
+      "chave": "LC-7",
+      "sessao": "mvmk8nrwhwaf"
+    },
+    {
+      "id": "tmvmk1ckb4f82",
+      "titulo": "Decidir GO ou NO-GO no pull request",
+      "descricao": "O PO acompanha o CI e os comentários de revisão do pull request e registra GO ou NO-GO no release.md. Um NO-GO diz o que precisa mudar.",
+      "coluna": "afazer",
+      "dono": "sdlc-po",
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792855773659,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "go-no-go",
+      "tipo": "tarefa",
+      "prioridade": "alta",
+      "rotulos": [
+        "Implantar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "Decisão registrada no release.md",
+          "feito": false
+        },
+        {
+          "texto": "Decisão: GO",
+          "feito": false
+        }
+      ],
+      "chave": "LC-8"
+    },
+    {
+      "id": "tmvmk1ckb7xl7",
+      "titulo": "Fazer o merge do PR no branch principal",
+      "descricao": "O merge é com você: com o GO, a HORSYN marca o pull request como pronto para revisão, e você faz o merge no GitHub. A versão vai ao ar com o merge, e a release é publicada a partir do commit do merge.",
+      "coluna": "afazer",
+      "dono": null,
+      "saida": "",
+      "revisao": "",
+      "tentativas": 0,
+      "criadaPor": "ciclo",
+      "criadaEm": 1792855773659,
+      "atualizadaEm": 1792855773659,
+      "historico": [
+        {
+          "em": 1792855773659,
+          "texto": "Criada pelo ciclo"
+        }
+      ],
+      "passo": "merge",
+      "tipo": "tarefa",
+      "prioridade": "alta",
+      "rotulos": [
+        "Implantar",
+        "v1.0.0"
+      ],
+      "criterios": [
+        {
+          "texto": "GO do PO",
+          "feito": false
+        },
+        {
+          "texto": "Pull request mesclado no branch principal",
+          "feito": false
+        }
+      ],
+      "chave": "LC-9"
+    }
+  ],
+  "prefixo": "LC",
+  "sequencia": 19
+}

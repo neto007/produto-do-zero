@@ -1,0 +1,14 @@
+{
+  "green": true,
+  "passed": 6,
+  "total": 6,
+  "failures": [],
+  "evidence": [
+    "POST /items - should create a new item (AC1): 201",
+    "POST /items - should return 400 for empty name (AC5): 400",
+    "POST /items - should return 400 for negative quantity (AC5): 400",
+    "PATCH /items/:id/status - should update item status to comprado (AC2): 200",
+    "GET /items/pending - should return only pending items (AC3): 200",
+    "DELETE /items/bought - should remove all bought items (AC4): 204"
+  ]
+}
