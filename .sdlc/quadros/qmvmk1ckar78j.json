@@ -5,9 +5,9 @@
   "produto": "lista-de-compras",
   "ciclo": "lista-de-compras",
   "modo": "agente",
-  "estado": "rodando",
+  "estado": "parado",
   "criadoEm": 1792855773658,
-  "atualizadoEm": 1792856114933,
+  "atualizadoEm": 1792856190322,
   "tarefas": [
     {
       "id": "tmvmk1ckbt6dh",
@@ -752,14 +752,14 @@
       "id": "tmvmk1ckbwxij",
       "titulo": "Abrir o pull request",
       "descricao": "O DevOps faz o commit da mudança no branch do ciclo, o push e abre o pull request com a versão no título.",
-      "coluna": "fazendo",
+      "coluna": "afazer",
       "dono": "sdlc-devops",
       "saida": "",
       "revisao": "",
       "tentativas": 0,
       "criadaPor": "ciclo",
       "criadaEm": 1792855773659,
-      "atualizadaEm": 1792856114933,
+      "atualizadaEm": 1792856190322,
       "historico": [
         {
           "em": 1792855773659,
@@ -768,6 +768,10 @@
         {
           "em": 1792856114933,
           "texto": "Movida para Fazendo pelo ciclo"
+        },
+        {
+          "em": 1792856190322,
+          "texto": "Movida para A fazer pelo ciclo"
         }
       ],
       "passo": "abrir-pr",
